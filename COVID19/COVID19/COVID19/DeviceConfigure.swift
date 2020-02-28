@@ -20,12 +20,14 @@ class DeviceConfigure: NSObject{
     //네트워크
     func confirmNetworkConnection(){
         if deviceIsConnectedToNetwork() == false{
+            print("network connection is bad")
             let alert:UIAlertController = UIAlertController(title: "네트워크 연결 오류", message: "네트워크가 불안정합니다.", preferredStyle: .alert)
             let action:UIAlertAction = UIAlertAction(title:"다시 시도", style: .default, handler: {
                 (ACTION) in self.confirmNetworkConnection()
             })
             alert.addAction(action)
-            showAlertMessage(alert: alert)
+            alert.show()
+            print("walk through showing message")
         }
     }
     func deviceIsConnectedToNetwork()->Bool{
@@ -59,20 +61,21 @@ class DeviceConfigure: NSObject{
                 let alert:UIAlertController = UIAlertController(title: "위치 서비스", message: "위치 서비스 사용을 허가해주세요.", preferredStyle: .alert)
                 let action:UIAlertAction = UIAlertAction(title: "확인", style: .default, handler: nil)
                 alert.addAction(action)
-                showAlertMessage(alert: alert)
+                alert.show()
             case .authorizedAlways, .authorizedWhenInUse:
                 return
         @unknown default:
             return
         }
     }
-    //경고 메시지
-    func showAlertMessage(alert:UIAlertController){
-        let window:UIWindow? = UIWindow()
-        
-        window?.windowLevel = UIWindow.Level.alert
-        window?.makeKeyAndVisible()
-        window?.rootViewController = UIViewController()
-        window?.rootViewController?.present(alert, animated: true, completion: nil)
-    }
+}
+//경고 메시지 확장
+extension UIAlertController {
+  func show() {
+    let window = UIWindow(frame: UIScreen.main.bounds)
+    window.rootViewController = UIViewController()
+    window.windowLevel = UIWindow.Level.alert
+    window.makeKeyAndVisible()
+    window.rootViewController?.present(self, animated: false, completion: nil)
+  }
 }

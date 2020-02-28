@@ -15,9 +15,9 @@ class FirstSceneViewController: UIViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        checkLocationService()
         checkDeviceNetworkStatus()
-        performSegue(withIdentifier: "goToSecond", sender: nil)
+        checkLocationService()
+        //performSegue(withIdentifier: "goToSecond", sender: nil)
     }
     
     func checkDeviceNetworkStatus(){
