@@ -10,10 +10,9 @@ import UIKit
 import SystemConfiguration
 import CoreLocation
 
-class DeviceConfigure: NSObject,CLLocationManagerDelegate{
+class DeviceConfigure: NSObject{
     
     static let instance = DeviceConfigure()
-    let locationManager = CLLocationManager()
 
     enum locationServiceStatus{
         case notDetermined
@@ -51,23 +50,12 @@ class DeviceConfigure: NSObject,CLLocationManagerDelegate{
         let status = CLLocationManager.authorizationStatus()
         switch status{
         case .notDetermined:
-            locationManager.requestWhenInUseAuthorization()
+            Location.location.locationManager.requestWhenInUseAuthorization()
             return locationServiceStatus.notDetermined
         case .denied, .restricted:
             return locationServiceStatus.deniedOrRestricted
         case .authorizedAlways, .authorizedWhenInUse:
             return locationServiceStatus.authorized
         }
-    }
-    
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        if let currentLocation = locations.last{
-            print("current location: \(currentLocation)")
-        }
-    }
-    
-    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-        print(error)
-    }
-        
+    }        
 }

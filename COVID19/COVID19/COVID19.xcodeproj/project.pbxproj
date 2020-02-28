@@ -15,6 +15,7 @@
 		E9CBF7F92407B6360010FC0A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E9CBF7F72407B6360010FC0A /* LaunchScreen.storyboard */; };
 		E9CBF805240888B80010FC0A /* FirstSceneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9CBF804240888B80010FC0A /* FirstSceneViewController.swift */; };
 		E9CBF807240889640010FC0A /* DeviceConfigure.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9CBF806240889640010FC0A /* DeviceConfigure.swift */; };
+		E9DE772F24090AE000ED0222 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9DE772E24090AE000ED0222 /* Location.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		E9CBF7FA2407B6360010FC0A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E9CBF804240888B80010FC0A /* FirstSceneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstSceneViewController.swift; sourceTree = SOURCE_ROOT; };
 		E9CBF806240889640010FC0A /* DeviceConfigure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceConfigure.swift; sourceTree = "<group>"; };
+		E9DE772E24090AE000ED0222 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +63,7 @@
 			isa = PBXGroup;
 			children = (
 				E9CBF804240888B80010FC0A /* FirstSceneViewController.swift */,
+				E9DE772E24090AE000ED0222 /* Location.swift */,
 				E9CBF7E92407B6340010FC0A /* AppDelegate.swift */,
 				E9CBF7EB2407B6340010FC0A /* SceneDelegate.swift */,
 				E9CBF7EF2407B6340010FC0A /* Main.storyboard */,
@@ -148,6 +151,7 @@
 				E9CBF7EC2407B6340010FC0A /* SceneDelegate.swift in Sources */,
 				E9CBF805240888B80010FC0A /* FirstSceneViewController.swift in Sources */,
 				E9CBF7F42407B6340010FC0A /* COVID19.xcdatamodeld in Sources */,
+				E9DE772F24090AE000ED0222 /* Location.swift in Sources */,
 				E9CBF807240889640010FC0A /* DeviceConfigure.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

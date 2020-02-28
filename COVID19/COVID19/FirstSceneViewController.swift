@@ -40,14 +40,11 @@ class FirstSceneViewController: UIViewController {
             showAlertMessage(message: alert)
             return
         case .notDetermined:
-            DeviceConfigure.instance.locationManager.requestWhenInUseAuthorization()
+            Location.location.locationManager.requestWhenInUseAuthorization()
             return
         case .authorized:
             break
         }
-        DeviceConfigure.instance.locationManager.delegate = DeviceConfigure.instance.self
-        DeviceConfigure.instance.locationManager.startUpdatingLocation()
-        
     }
     
     func showAlertMessage(message:UIAlertController){

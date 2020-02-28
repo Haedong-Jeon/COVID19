@@ -11,12 +11,15 @@ import CoreData
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
-
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        sleep(5)
+        OperationQueue().addOperation {
+            sleep(2)
+            OperationQueue.main.addOperation {
+                Location.location.locationManager.delegate = Location.location.self
+                Location.location.locationManager.startUpdatingLocation()
+            }
+        }
         return true
     }
 
