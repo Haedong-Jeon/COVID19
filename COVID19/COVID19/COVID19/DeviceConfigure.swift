@@ -10,13 +10,21 @@ import UIKit
 import SystemConfiguration
 import CoreLocation
 
-class DeviceConfigure{
-    static let instance = DeviceConfigure()
+class DeviceConfigure: NSObject,CLLocationManagerDelegate{
     
-    private init(){
-        //NOTHING
+    static let instance = DeviceConfigure()
+    let locationManager = CLLocationManager()
+
+    enum locationServiceStatus{
+        case notDetermined
+        case deniedOrRestricted
+        case authorized
     }
     
+    override private init(){
+        //NOTHING
+    }
+    //네트워크
     func deviceIsConnectedToNetwork()->Bool{
         var zeroAddress = sockaddr_in()
         zeroAddress.sin_len = UInt8(MemoryLayout.size(ofValue:zeroAddress))
@@ -38,14 +46,28 @@ class DeviceConfigure{
         let ret = (isReachable && !needsConnection)
         return ret
     }
-    
-    func locationPermission()->Bool{
+    //위치 서비스
+    func getLocation()->locationServiceStatus{
         let status = CLLocationManager.authorizationStatus()
-        if status ==  CLAuthorizationStatus.denied || status == CLAuthorizationStatus.restricted {
-            return false
-        }else{
-            return true
+        switch status{
+        case .notDetermined:
+            locationManager.requestWhenInUseAuthorization()
+            return locationServiceStatus.notDetermined
+        case .denied, .restricted:
+            return locationServiceStatus.deniedOrRestricted
+        case .authorizedAlways, .authorizedWhenInUse:
+            return locationServiceStatus.authorized
         }
     }
     
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        if let currentLocation = locations.last{
+            print("current location: \(currentLocation)")
+        }
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        print(error)
+    }
+        
 }
