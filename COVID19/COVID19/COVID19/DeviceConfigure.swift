@@ -8,6 +8,7 @@
 
 import UIKit
 import SystemConfiguration
+import CoreLocation
 
 class DeviceConfigure{
     static let instance = DeviceConfigure()
@@ -37,4 +38,14 @@ class DeviceConfigure{
         let ret = (isReachable && !needsConnection)
         return ret
     }
+    
+    func locationPermission()->Bool{
+        let status = CLLocationManager.authorizationStatus()
+        if status ==  CLAuthorizationStatus.denied || status == CLAuthorizationStatus.restricted {
+            return false
+        }else{
+            return true
+        }
+    }
+    
 }
