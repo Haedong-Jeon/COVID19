@@ -17,14 +17,32 @@ class FirstSceneViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         checkDeviceNetworkStatus()
         checkLocationService()
-        //performSegue(withIdentifier: "goToSecond", sender: nil)
+        performSegue(withIdentifier: "goToSecond", sender: nil)
     }
     
     func checkDeviceNetworkStatus(){
-        DeviceConfigure.instance.confirmNetworkConnection()
+        if DeviceConfigure.instance.deviceIsConnectedToNetwork() == false{
+            let alert = UIAlertController(title: Constant.networkConnectionErrorTitle, message: Constant.networkConnectionErrorMsg, preferredStyle: .alert)
+            let action = UIAlertAction(title: Constant.retry, style: .default, handler: {
+                (ACTION) in self.checkDeviceNetworkStatus()
+            })
+            alert.addAction(action)
+            present(alert, animated: true, completion: nil)
+        }
     }
     
     func checkLocationService(){
-        DeviceConfigure.instance.getLocationServicePermission()
+        let locationPermission = DeviceConfigure.instance.getLocationServicePermission()
+        switch locationPermission{
+            case .authorized:
+                return
+            case .deniedOrRestricted:
+                let alert = UIAlertController(title: Constant.locationPermissionDeniedAlertTitle, message: Constant.locationPermissionDeniedAlertMsg, preferredStyle: .alert)
+                let alertAction = UIAlertAction(title: Constant.ok, style: .default, handler: nil)
+                alert.addAction(alertAction)
+                present(alert, animated: true, completion: nil)
+            case .notDetermined:
+                Location.location.locationManager.requestWhenInUseAuthorization()
+        }
     }
 }
