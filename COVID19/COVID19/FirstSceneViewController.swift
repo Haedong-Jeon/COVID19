@@ -17,37 +17,14 @@ class FirstSceneViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         checkLocationService()
         checkDeviceNetworkStatus()
+        performSegue(withIdentifier: "goToSecond", sender: nil)
     }
     
     func checkDeviceNetworkStatus(){
-        if(!DeviceConfigure.instance.deviceIsConnectedToNetwork()){
-            let alert:UIAlertController = UIAlertController(title: "네트워크 연결 오류", message: "네트워크가 불안정합니다.", preferredStyle: .alert)
-            let action:UIAlertAction = UIAlertAction(title:"다시 시도", style: .default, handler: {
-                (ACTION) in self.checkDeviceNetworkStatus()
-            })
-            alert.addAction(action)
-            showAlertMessage(message: alert)
-        }
+        DeviceConfigure.instance.confirmNetworkConnection()
     }
     
     func checkLocationService(){
-        let locationServiceStatus = DeviceConfigure.instance.getLocation()
-        switch locationServiceStatus{
-        case .deniedOrRestricted:
-            let alert = UIAlertController(title: "위치 서비스", message: "위치 서비스를 켜주세요.", preferredStyle: .alert)
-            let action = UIAlertAction(title: "확인", style: .default, handler: nil)
-            alert.addAction(action)
-            showAlertMessage(message: alert)
-            return
-        case .notDetermined:
-            Location.location.locationManager.requestWhenInUseAuthorization()
-            return
-        case .authorized:
-            break
-        }
-    }
-    
-    func showAlertMessage(message:UIAlertController){
-        present(message, animated:true, completion: nil)
+        DeviceConfigure.instance.getLocationServicePermission()
     }
 }

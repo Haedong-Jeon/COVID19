@@ -12,10 +12,10 @@ import CoreLocation
 class Location: NSObject, CLLocationManagerDelegate{
     static let location = Location()
     let locationManager = CLLocationManager()
-    var positionString:String
+    var positionString:String?
     
     override private init(){
-        positionString = ""
+        
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
