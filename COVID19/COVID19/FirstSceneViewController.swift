@@ -17,7 +17,7 @@ class FirstSceneViewController: UIViewController {
         let locationServiceStatus = DeviceConfigure.instance.checkLocationService()
         let networkServiceStatus = DeviceConfigure.instance.checkDeviceNetworkStatus()
         
-        if (locationServiceStatus == Alert.TYPE.locationPermissionDenied)||(locationServiceStatus == Alert.TYPE.locationPermissionNotDetermined){
+        if locationServiceStatus == Alert.TYPE.locationPermissionDenied{
             showAlertMsg(msgTitle: Constant.locationPermissionDeniedAlertTitle, msgBody: Constant.locationPermissionDeniedAlertMsg, btn: Constant.ok){
                 (ACTION) in self.viewDidAppear(true)
             }
