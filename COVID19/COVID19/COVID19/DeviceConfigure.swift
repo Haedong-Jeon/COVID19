@@ -14,15 +14,34 @@ class DeviceConfigure: NSObject{
     
     static let instance = DeviceConfigure()
     
-    enum locationServicePermissionState{
-        case deniedOrRestricted
-        case notDetermined
-        case authorized
-    }
     override private init(){
         //NOTHING
     }
+    //위치 서비스
+    func checkLocationService()->Int{
+        let locationPermission = CLLocationManager.authorizationStatus()
+        switch locationPermission{
+            case .denied, .restricted:
+                return Alert.TYPE.locationPermissionDenied
+            case .notDetermined:
+                Location.location.locationManager.requestWhenInUseAuthorization()
+                return Alert.TYPE.noAlert
+            case .authorizedAlways:
+                return Alert.TYPE.noAlert
+            case .authorizedWhenInUse:
+                return Alert.TYPE.noAlert
+            @unknown default:
+                    return Alert.TYPE.locationPermissionDenied
+        }
+    }
     //네트워크
+    func checkDeviceNetworkStatus()->Int{
+        if deviceIsConnectedToNetwork() == false{
+            return Alert.TYPE.networkConnectionError
+        }else{
+            return Alert.TYPE.noAlert
+        }
+    }
     func deviceIsConnectedToNetwork()->Bool{
         var zeroAddress = sockaddr_in()
         zeroAddress.sin_len = UInt8(MemoryLayout.size(ofValue:zeroAddress))
@@ -42,20 +61,6 @@ class DeviceConfigure: NSObject{
         let needsConnection = (flags.rawValue & UInt32(kSCNetworkFlagsConnectionRequired)) != 0
         let ret = (isReachable && !needsConnection)
         return ret
-    }
-    //위치 서비스
-    func getLocationServicePermission()->locationServicePermissionState{
-        let permissionStatus = CLLocationManager.authorizationStatus()
-        switch permissionStatus{
-            case .notDetermined:
-                return locationServicePermissionState.notDetermined
-            case .denied, .restricted:
-                return locationServicePermissionState.deniedOrRestricted
-            case .authorizedAlways, .authorizedWhenInUse:
-                return locationServicePermissionState.authorized
-        @unknown default:
-            return locationServicePermissionState.notDetermined
-        }
     }
 }
 

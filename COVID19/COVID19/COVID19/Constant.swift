@@ -23,3 +23,11 @@ class Constant {
     static let orderMaskMenu = "마스크 주문하기"
     static let checkNews = "관련 뉴스 체크하기"
 }
+
+class Alert{
+    enum TYPE{
+        static let locationPermissionDenied = 1111
+        static let networkConnectionError = 2222
+        static let noAlert = 0
+    }
+}
