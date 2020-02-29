@@ -15,16 +15,25 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="launch_img" translatesAutoresizingMaskIntoConstraints="NO" id="QDO-Rr-Q9I">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="QDO-Rr-Q9I">
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="smiley.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="cv2-zM-eNt">
+                                <rect key="frame" x="87" y="389.5" width="240" height="127"/>
+                                <color key="tintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="cv2-zM-eNt" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="345" id="7Sh-bg-dzk"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="QDO-Rr-Q9I" secondAttribute="trailing" id="7xe-Ry-R1f"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="QDO-Rr-Q9I" secondAttribute="bottom" id="DRl-qN-NTo"/>
+                            <constraint firstItem="cv2-zM-eNt" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="87" id="OM8-qF-sss"/>
                             <constraint firstItem="QDO-Rr-Q9I" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Qrz-ue-zdo"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="cv2-zM-eNt" secondAttribute="bottom" constant="345" id="SQC-CD-Nx5"/>
                             <constraint firstItem="QDO-Rr-Q9I" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Umw-os-auw"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="cv2-zM-eNt" secondAttribute="trailing" constant="87" id="eQu-Le-doY"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -35,6 +44,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="launch_img" width="392" height="512"/>
+        <image name="smiley.fill" catalog="system" width="64" height="60"/>
     </resources>
 </document>

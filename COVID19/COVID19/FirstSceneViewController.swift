@@ -18,7 +18,7 @@ class FirstSceneViewController: UIViewController {
         let networkServiceStatus = DeviceConfigure.instance.checkDeviceNetworkStatus()
         
         if locationServiceStatus == Alert.TYPE.locationPermissionNotDetermined{
-            self.viewDidAppear(true)//위치 서비스 동의 변경 사항을 적용
+            self.viewDidAppear(true)//위치 서비스 동의 변경 사항을 적용하기위해 함수 다시 실행
         }
         else if locationServiceStatus == Alert.TYPE.locationPermissionDenied{
             showAlertMsg(msgTitle: Constant.locationPermissionDeniedAlertTitle, msgBody: Constant.locationPermissionDeniedAlertMsg, btn: Constant.ok){
