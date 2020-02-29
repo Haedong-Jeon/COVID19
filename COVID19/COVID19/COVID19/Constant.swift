@@ -27,7 +27,8 @@ class Constant {
 class Alert{
     enum TYPE{
         static let locationPermissionDenied = 1111
-        static let networkConnectionError = 2222
+        static let locationPermissionNotDetermined = 2222
+        static let networkConnectionError = 3333
         static let noAlert = 0
     }
 }

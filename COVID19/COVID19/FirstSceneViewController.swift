@@ -7,12 +7,8 @@
 //
 
 import UIKit
-import RxSwift
 
 class FirstSceneViewController: UIViewController {
-    var locationServiceSubject = PublishSubject<Int>.just(DeviceConfigure.instance.checkLocationService())
-    var networkServiceSubject = PublishSubject<Int>.just(DeviceConfigure.instance.checkDeviceNetworkStatus())
-
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -21,12 +17,12 @@ class FirstSceneViewController: UIViewController {
         let locationServiceStatus = DeviceConfigure.instance.checkLocationService()
         let networkServiceStatus = DeviceConfigure.instance.checkDeviceNetworkStatus()
         
-        if locationServiceStatus == Alert.TYPE.locationPermissionDenied{
+        if (locationServiceStatus == Alert.TYPE.locationPermissionDenied)||(locationServiceStatus == Alert.TYPE.locationPermissionNotDetermined){
             showAlertMsg(msgTitle: Constant.locationPermissionDeniedAlertTitle, msgBody: Constant.locationPermissionDeniedAlertMsg, btn: Constant.ok){
                 (ACTION) in self.viewDidAppear(true)
             }
         }
-        if networkServiceStatus == Alert.TYPE.networkConnectionError{
+        else if networkServiceStatus == Alert.TYPE.networkConnectionError{
             showAlertMsg(msgTitle: Constant.networkConnectionErrorTitle, msgBody: Constant.networkConnectionErrorMsg, btn: Constant.retry){
                 (ACTION) in self.viewDidAppear(true)
             }

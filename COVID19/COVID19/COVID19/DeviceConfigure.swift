@@ -25,7 +25,7 @@ class DeviceConfigure: NSObject{
                 return Alert.TYPE.locationPermissionDenied
             case .notDetermined:
                 Location.location.locationManager.requestWhenInUseAuthorization()
-                return Alert.TYPE.noAlert
+                return Alert.TYPE.locationPermissionNotDetermined
             case .authorizedAlways:
                 return Alert.TYPE.noAlert
             case .authorizedWhenInUse:
