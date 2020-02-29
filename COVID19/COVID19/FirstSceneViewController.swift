@@ -17,12 +17,15 @@ class FirstSceneViewController: UIViewController {
         let locationServiceStatus = DeviceConfigure.instance.checkLocationService()
         let networkServiceStatus = DeviceConfigure.instance.checkDeviceNetworkStatus()
         
-        if locationServiceStatus == Alert.TYPE.locationPermissionDenied{
+        if locationServiceStatus == Alert.TYPE.locationPermissionNotDetermined{
+            self.viewDidAppear(true)//위치 서비스 동의 변경 사항을 적용
+        }
+        else if locationServiceStatus == Alert.TYPE.locationPermissionDenied{
             showAlertMsg(msgTitle: Constant.locationPermissionDeniedAlertTitle, msgBody: Constant.locationPermissionDeniedAlertMsg, btn: Constant.ok){
                 (ACTION) in self.viewDidAppear(true)
             }
         }
-        else if networkServiceStatus == Alert.TYPE.networkConnectionError{
+        if networkServiceStatus == Alert.TYPE.networkConnectionError{
             showAlertMsg(msgTitle: Constant.networkConnectionErrorTitle, msgBody: Constant.networkConnectionErrorMsg, btn: Constant.retry){
                 (ACTION) in self.viewDidAppear(true)
             }

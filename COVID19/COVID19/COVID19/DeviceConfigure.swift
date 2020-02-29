@@ -19,19 +19,19 @@ class DeviceConfigure: NSObject{
     }
     //위치 서비스
     func checkLocationService()->Int{
+        Location.location.locationManager.requestWhenInUseAuthorization()
         let locationPermission = CLLocationManager.authorizationStatus()
         switch locationPermission{
             case .denied, .restricted:
                 return Alert.TYPE.locationPermissionDenied
             case .notDetermined:
-                Location.location.locationManager.requestWhenInUseAuthorization()
                 return Alert.TYPE.locationPermissionNotDetermined
             case .authorizedAlways:
                 return Alert.TYPE.noAlert
             case .authorizedWhenInUse:
                 return Alert.TYPE.noAlert
             @unknown default:
-                    return Alert.TYPE.locationPermissionDenied
+                    return Alert.TYPE.noAlert
         }
     }
     //네트워크
