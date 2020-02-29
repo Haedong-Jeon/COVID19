@@ -9,12 +9,16 @@
 import UIKit
 
 class SecondViewController: UIViewController {
-
-    @IBOutlet weak var positionTextLabel:UILabel?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        positionTextLabel?.text = Location.location.positionString
         // Do any additional setup after loading the view.
+    }
+    //이 화면은 내렸을 때 앱 종료
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        if isBeingDismissed {
+            UIControl().sendAction(#selector(URLSessionTask.suspend), to: UIApplication.shared, for: nil)
+        }
     }
 }

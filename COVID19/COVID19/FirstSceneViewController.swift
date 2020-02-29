@@ -19,7 +19,7 @@ class FirstSceneViewController: UIViewController {
         checkLocationService()
         performSegue(withIdentifier: "goToSecond", sender: nil)
     }
-    
+    //네트워크
     func checkDeviceNetworkStatus(){
         if DeviceConfigure.instance.deviceIsConnectedToNetwork() == false{
             let alert = UIAlertController(title: Constant.networkConnectionErrorTitle, message: Constant.networkConnectionErrorMsg, preferredStyle: .alert)
@@ -30,7 +30,7 @@ class FirstSceneViewController: UIViewController {
             present(alert, animated: true, completion: nil)
         }
     }
-    
+    //위치 서비스
     func checkLocationService(){
         let locationPermission = DeviceConfigure.instance.getLocationServicePermission()
         switch locationPermission{
