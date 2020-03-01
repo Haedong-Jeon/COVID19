@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FirstSceneViewController: UIViewController {
+class FirstSceneViewController: CustomViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -21,34 +21,17 @@ class FirstSceneViewController: UIViewController {
             self.viewDidAppear(true)//위치 서비스 동의 변경 사항을 적용하기위해 함수 다시 실행
         }
         else if locationServiceStatus == Alert.TYPE.locationPermissionDenied{
-            showAlertMsg(msgTitle: Constant.locationPermissionDeniedAlertTitle, msgBody: Constant.locationPermissionDeniedAlertMsg, btn: Constant.ok){
+            super.showAlertMsg(msgTitle: Constant.locationPermissionDeniedAlertTitle, msgBody: Constant.locationPermissionDeniedAlertMsg, btn: Constant.ok){
                 (ACTION) in self.viewDidAppear(true)
             }
         }
         if networkServiceStatus == Alert.TYPE.networkConnectionError{
-            showAlertMsg(msgTitle: Constant.networkConnectionErrorTitle, msgBody: Constant.networkConnectionErrorMsg, btn: Constant.retry){
+            super.showAlertMsg(msgTitle: Constant.networkConnectionErrorTitle, msgBody: Constant.networkConnectionErrorMsg, btn: Constant.retry){
                 (ACTION) in self.viewDidAppear(true)
             }
         }
         if locationServiceStatus == Alert.TYPE.noAlert && networkServiceStatus == Alert.TYPE.noAlert{
-            changeScreen(identifierString: "goToSecond")
+            super.changeScreen(identifierString: "goToSecond")
         }
-    }
-    //화면 이동
-    func changeScreen(identifierString:String){
-        performSegue(withIdentifier: identifierString, sender: nil)
-    }
-    //오류 메시지
-    func showAlertMsg(msgTitle:String, msgBody:String, btn:String){
-        let alert = UIAlertController(title: msgTitle, message: msgBody, preferredStyle: .alert)
-        let alertAction = UIAlertAction(title: btn, style: .default, handler: nil)
-        alert.addAction(alertAction)
-        present(alert, animated: true, completion: nil)
-    }
-    func showAlertMsg(msgTitle:String, msgBody:String, btn:String, handler: @escaping (UIAlertAction)->()){
-        let alert = UIAlertController(title: msgTitle, message: msgBody, preferredStyle: .alert)
-        let alertAction = UIAlertAction(title: btn, style: .default, handler: handler)
-        alert.addAction(alertAction)
-        present(alert, animated: true, completion: nil)
     }
 }

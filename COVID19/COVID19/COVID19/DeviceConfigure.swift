@@ -19,12 +19,12 @@ class DeviceConfigure: NSObject{
     }
     //위치 서비스
     func checkLocationService()->Int{
-        Location.location.locationManager.requestWhenInUseAuthorization()
         let locationPermission = CLLocationManager.authorizationStatus()
         switch locationPermission{
             case .denied, .restricted:
                 return Alert.TYPE.locationPermissionDenied
             case .notDetermined:
+                Location.location.locationManager.requestWhenInUseAuthorization()
                 return Alert.TYPE.locationPermissionNotDetermined
             case .authorizedAlways:
                 return Alert.TYPE.noAlert
@@ -53,7 +53,7 @@ class DeviceConfigure: NSObject{
             }
         }
         var flags: SCNetworkReachabilityFlags = SCNetworkReachabilityFlags(rawValue: 0)
-        if SCNetworkReachabilityGetFlags(defaultRouteReachability!, &flags) == false {
+        if SCNetworkReachabilityGetFlags(defaultRouteReachability!, &flags) == false{
             return false
         }
         
