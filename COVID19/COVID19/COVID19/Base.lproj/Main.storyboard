@@ -137,22 +137,68 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="716"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="지역별 현황" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cmV-dC-SQV">
-                                <rect key="frame" x="69" y="276" width="235" height="103"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="tPG-MA-Dcw">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="716"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="regionCell" rowHeight="200" id="dt1-pZ-jvp" customClass="regionCell" customModule="COVID19" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="200"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="dt1-pZ-jvp" id="Qmm-XX-dEw">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="200"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="cityName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cXE-fc-xfn">
+                                                    <rect key="frame" x="38" y="42" width="73" height="117"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="numOfPatient" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="znm-Lf-F53">
+                                                    <rect key="frame" x="221" y="42" width="106" height="117"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="znm-Lf-F53" firstAttribute="leading" secondItem="cXE-fc-xfn" secondAttribute="trailing" constant="110" id="rh3-Y8-pOl"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <constraints>
+                                            <constraint firstItem="cXE-fc-xfn" firstAttribute="leading" secondItem="dt1-pZ-jvp" secondAttribute="leading" constant="38" id="DzY-kN-C18"/>
+                                            <constraint firstAttribute="bottom" secondItem="znm-Lf-F53" secondAttribute="bottom" constant="41" id="LVE-tW-kvO"/>
+                                            <constraint firstItem="cXE-fc-xfn" firstAttribute="top" secondItem="dt1-pZ-jvp" secondAttribute="top" constant="42" id="Lbd-2t-Bym"/>
+                                            <constraint firstAttribute="bottom" secondItem="cXE-fc-xfn" secondAttribute="bottom" constant="41" id="Lvg-uv-tOu"/>
+                                            <constraint firstItem="znm-Lf-F53" firstAttribute="top" secondItem="dt1-pZ-jvp" secondAttribute="top" constant="42" id="taO-Ce-usD"/>
+                                            <constraint firstAttribute="trailing" secondItem="znm-Lf-F53" secondAttribute="trailing" constant="87" id="uMC-1C-J3l"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="cityName" destination="cXE-fc-xfn" id="0Nt-Sk-uLr"/>
+                                            <outlet property="numOfPatient" destination="znm-Lf-F53" id="YB1-uI-tcp"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="Xil-ay-Cn0" id="iHw-pQ-Ezo"/>
+                                    <outlet property="delegate" destination="Xil-ay-Cn0" id="ITI-T4-HoG"/>
+                                </connections>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="tPG-MA-Dcw" firstAttribute="top" secondItem="GM9-36-NLV" secondAttribute="top" id="K6E-LN-Ls4"/>
+                            <constraint firstItem="tPG-MA-Dcw" firstAttribute="leading" secondItem="GM9-36-NLV" secondAttribute="leading" id="qF0-OJ-PLv"/>
+                            <constraint firstItem="GM9-36-NLV" firstAttribute="bottom" secondItem="tPG-MA-Dcw" secondAttribute="bottom" id="v4K-h2-KuV"/>
+                            <constraint firstItem="GM9-36-NLV" firstAttribute="trailing" secondItem="tPG-MA-Dcw" secondAttribute="trailing" id="zKw-7m-4x1"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="GM9-36-NLV"/>
                     </view>
                     <navigationItem key="navigationItem" id="QNc-Jf-Ha9"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KhN-bA-YTS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1113" y="1047"/>
+            <point key="canvasLocation" x="-1113.0434782608697" y="1046.7391304347827"/>
         </scene>
         <!--Check Danger Location View Controller-->
         <scene sceneID="Z9Z-hf-OIu">

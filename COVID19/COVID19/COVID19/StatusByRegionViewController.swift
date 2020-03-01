@@ -8,13 +8,26 @@
 
 import UIKit
 
-class StatusByRegionViewController: CustomViewController {
-
+class StatusByRegionViewController: CustomViewController, UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return Region.cities.count
+    }
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "regionCell", for: indexPath) as? regionCell else{
+            return UITableViewCell()
+        }
+        cell.cityName?.text = Region.cities[indexPath.row]
+        cell.numOfPatient?.text = "\(444)";
+        return cell
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
-    
+}
 
+class regionCell: UITableViewCell{
+    @IBOutlet weak var cityName:UILabel!
+    @IBOutlet weak var numOfPatient:UILabel!
 }
