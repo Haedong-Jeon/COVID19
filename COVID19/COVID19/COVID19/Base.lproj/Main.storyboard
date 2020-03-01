@@ -42,7 +42,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="139" y="113"/>
+            <point key="canvasLocation" x="-1209" y="42"/>
         </scene>
         <!--Second View Controller-->
         <scene sceneID="icj-qc-vPZ">
@@ -57,6 +57,9 @@
                                 <color key="backgroundColor" red="0.91816671407148009" green="1" blue="0.99020028218943301" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
                                 <state key="normal" title="지역별 현황"/>
+                                <connections>
+                                    <action selector="goToStatusByRegionScene" destination="BIy-AC-dVF" eventType="touchUpInside" id="wX3-y8-xCq"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5YW-eY-p28">
                                 <rect key="frame" x="0.0" y="158" width="414" height="100"/>
@@ -66,12 +69,18 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
                                 <state key="normal" title="마스크 주문"/>
+                                <connections>
+                                    <action selector="goToOrderMasksScene" destination="BIy-AC-dVF" eventType="touchUpInside" id="7tw-lk-KbR"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1iE-wD-Qyh">
                                 <rect key="frame" x="0.0" y="266" width="414" height="100"/>
                                 <color key="backgroundColor" red="0.98260669949256585" green="0.9397926136512269" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
                                 <state key="normal" title="관련 뉴스"/>
+                                <connections>
+                                    <action selector="goToRelatedNewsScene" destination="BIy-AC-dVF" eventType="touchUpInside" id="2JY-eg-aay"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rxY-FB-tT2">
                                 <rect key="frame" x="0.0" y="374" width="414" height="100"/>
@@ -82,6 +91,9 @@
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
                                 <color key="tintColor" red="0.98260669950000001" green="0.9397926137" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <state key="normal" title="위험지역 확인"/>
+                                <connections>
+                                    <action selector="goTocheckDangerLocationScene" destination="BIy-AC-dVF" eventType="touchUpInside" id="u1h-Kg-fhS"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -106,10 +118,116 @@
                         <viewLayoutGuide key="safeArea" id="HAH-dQ-jqI"/>
                     </view>
                     <navigationItem key="navigationItem" id="D1H-8x-T1t"/>
+                    <connections>
+                        <segue destination="Xil-ay-Cn0" kind="show" identifier="goToStatusByRegion" id="ZUE-RR-hdp"/>
+                        <segue destination="jAN-Ml-55O" kind="show" identifier="goToOrderMasks" id="0dd-Si-6Hr"/>
+                        <segue destination="TCB-2G-lkj" kind="show" identifier="goToRelatedNews" id="4ar-k7-tiy"/>
+                        <segue destination="IxR-e8-EM8" kind="show" identifier="goToCheckDangerLocation" id="3BX-Fy-sWP"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SYV-Kt-n9c" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1124.6376811594205" y="111.16071428571428"/>
+            <point key="canvasLocation" x="138" y="43"/>
+        </scene>
+        <!--Status By Region View Controller-->
+        <scene sceneID="yDG-HX-dV3">
+            <objects>
+                <viewController id="Xil-ay-Cn0" customClass="StatusByRegionViewController" customModule="COVID19" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ARu-Vi-zhm">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="716"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="지역별 현황" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cmV-dC-SQV">
+                                <rect key="frame" x="69" y="276" width="235" height="103"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="GM9-36-NLV"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="QNc-Jf-Ha9"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KhN-bA-YTS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1113" y="1047"/>
+        </scene>
+        <!--Check Danger Location View Controller-->
+        <scene sceneID="Z9Z-hf-OIu">
+            <objects>
+                <viewController id="IxR-e8-EM8" customClass="CheckDangerLocationViewController" customModule="COVID19" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Cu6-4q-A3e">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="716"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="위험 지역 확인" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KJM-c5-5uV">
+                                <rect key="frame" x="86" y="282" width="142" height="97"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="8i8-6z-nlq"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="zWz-Lq-Whh"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wuq-rz-zIh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="970" y="1047"/>
+        </scene>
+        <!--Related News View Controller-->
+        <scene sceneID="8gX-gJ-p1w">
+            <objects>
+                <viewController id="TCB-2G-lkj" customClass="RelatedNewsViewController" customModule="COVID19" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="pyM-hg-3R0">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="716"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="관련 뉴스" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L4l-1V-yUA">
+                                <rect key="frame" x="100" y="358" width="128" height="114"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="Hgs-5d-AwN"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="NfL-Ce-yYE"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hkH-ku-fC9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="264" y="1047"/>
+        </scene>
+        <!--Order Masks View Controller-->
+        <scene sceneID="flX-tJ-Gs5">
+            <objects>
+                <viewController id="jAN-Ml-55O" customClass="OrderMasksViewController" customModule="COVID19" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="LZl-7U-acS">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="716"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="마스크 주문" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yc6-Gn-S9N">
+                                <rect key="frame" x="84" y="269" width="191" height="119"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="RzR-4K-GSw"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="5yr-Er-856"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="q0B-36-2dV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-426" y="1047"/>
         </scene>
     </scenes>
     <resources>

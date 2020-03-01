@@ -1,14 +1,14 @@
 //
-//  ViewManager.swift
+//  OrderMasksViewController.swift
 //  COVID19
 //
-//  Created by 전해동 on 2020/02/29.
+//  Created by 전해동 on 2020/03/01.
 //  Copyright © 2020 전해동. All rights reserved.
 //
 
 import UIKit
 
-class ViewManager: UIViewController {
+class OrderMasksViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

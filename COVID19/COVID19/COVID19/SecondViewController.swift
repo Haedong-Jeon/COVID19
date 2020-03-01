@@ -9,6 +9,7 @@
 import UIKit
 
 class SecondViewController: UIViewController{
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -25,6 +26,19 @@ class SecondViewController: UIViewController{
             }
         }
         
+    }
+    //메뉴 버튼 클릭시 이동
+    @IBAction func goToStatusByRegionScene(){
+        performSegue(withIdentifier: "goToStatusByRegion", sender: nil)
+    }
+    @IBAction func goToOrderMasksScene(){
+        performSegue(withIdentifier: "goToOrderMasks", sender: nil)
+    }
+    @IBAction func goToRelatedNewsScene(){
+        performSegue(withIdentifier: "goToRelatedNews", sender: nil)
+    }
+    @IBAction func goTocheckDangerLocationScene(){
+        performSegue(withIdentifier: "goToCheckDangerLocation", sender: nil)
     }
     //이 화면은 내렸을 때 앱 종료
     override func viewWillDisappear(_ animated: Bool) {
