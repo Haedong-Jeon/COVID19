@@ -8,6 +8,7 @@
 
 import UIKit
 import SystemConfiguration
+import RxSwift
 import CoreLocation
 
 class DeviceConfigure: NSObject{
@@ -18,28 +19,17 @@ class DeviceConfigure: NSObject{
         //NOTHING
     }
     //위치 서비스
-    func checkLocationService()->Int{
-        let locationPermission = CLLocationManager.authorizationStatus()
-        switch locationPermission{
-            case .denied, .restricted:
-                return Alert.TYPE.locationPermissionDenied
-            case .notDetermined:
-                Location.location.locationManager.requestWhenInUseAuthorization()
-                return Alert.TYPE.locationPermissionNotDetermined
-            case .authorizedAlways:
-                return Alert.TYPE.noAlert
-            case .authorizedWhenInUse:
-                return Alert.TYPE.noAlert
-            @unknown default:
-                    return Alert.TYPE.noAlert
-        }
+    func checkLocationService()->Observable<CLAuthorizationStatus>{
+        Location.location.locationManager.requestWhenInUseAuthorization()
+        let locationPermission = Observable<CLAuthorizationStatus>.just(CLLocationManager.authorizationStatus())
+        return locationPermission
     }
     //네트워크
-    func checkDeviceNetworkStatus()->Int{
+    func checkDeviceNetworkStatus()->Observable<Int>{
         if deviceIsConnectedToNetwork() == false{
-            return Alert.TYPE.networkConnectionError
+            return Observable<Int>.just(Alert.TYPE.networkConnectionError)
         }else{
-            return Alert.TYPE.noAlert
+            return Observable<Int>.just(Alert.TYPE.noAlert)
         }
     }
     func deviceIsConnectedToNetwork()->Bool{

@@ -17,6 +17,7 @@ class StatusByRegionViewController: CustomViewController, UITableViewDelegate, U
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "regionCell", for: indexPath) as? regionCell else{
             return UITableViewCell()
         }
+        
         cell.cityName?.text = Region.cities[indexPath.row]
         cell.numOfPatient?.text = NumOfPatient.patientNum[indexPath.row]
         cell.numOfPatient?.textColor = UIColor.red
