@@ -38,5 +38,5 @@ struct Region{
 }
 
 struct NumOfPatient{
-    static let patientNum:Array<String> = ["","","","","","","","","","","","","","","","",""]
+    static var patientNum:Array<String> = ["","","","","","","","","","","","","","","","",""]
 }

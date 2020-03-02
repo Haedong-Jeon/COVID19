@@ -23,7 +23,7 @@ class StatusByRegionViewController: CustomViewController, UITableViewDelegate, U
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        NumOfPatient.patientNum.removeAll()
         let mainURL = "http://ncov.mohw.go.kr/bdBoardList_Real.do?brdId=1&brdGubun=13&ncvContSeq=&contSeq=&board_id=&gubun="
         guard let main = URL(string: mainURL) else {
           print("Error: \(mainURL) doesn't seem to be a valid URL")
@@ -34,6 +34,7 @@ class StatusByRegionViewController: CustomViewController, UITableViewDelegate, U
           let doc = try HTML(html: coronaCityMain, encoding: .utf8)
           for product in doc.xpath("//div[@class='data_table tbl_scrl_mini2 mgt24']/table/tbody/tr"){
             let productTable = product.nextSibling?.at_xpath("td")?.nextSibling?.text
+            NumOfPatient.patientNum.append("\(productTable ?? "defaultErrorString")")
             print(productTable ?? "defaultErrorString")
         }
           
