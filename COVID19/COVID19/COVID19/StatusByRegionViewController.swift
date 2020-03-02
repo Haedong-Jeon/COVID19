@@ -34,10 +34,9 @@ class StatusByRegionViewController: CustomViewController, UITableViewDelegate, U
         do{
           let coronaCityMain = try String(contentsOf: main, encoding: .utf8)
           let doc = try HTML(html: coronaCityMain, encoding: .utf8)
-          for product in doc.xpath("//div[@class='data_table tbl_scrl_mini2 mgt24']/table/tbody/tr"){
-            let productTable = product.nextSibling?.at_xpath("td")?.nextSibling?.text
-            NumOfPatient.patientNum.append("\(productTable ?? "defaultErrorString")")
-            print(productTable ?? "defaultErrorString")
+          for htmlSource in doc.xpath("//div[@class='data_table tbl_scrl_mini2 mgt24']/table/tbody/tr"){
+            let statusByCities = htmlSource.nextSibling?.at_xpath("td")?.nextSibling?.text
+            NumOfPatient.patientNum.append("\(statusByCities ?? "defaultErrorString")")
         }
           
         }catch let error{
