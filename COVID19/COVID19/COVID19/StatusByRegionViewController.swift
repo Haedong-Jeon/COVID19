@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Kanna
 
 class StatusByRegionViewController: CustomViewController, UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -22,7 +23,24 @@ class StatusByRegionViewController: CustomViewController, UITableViewDelegate, U
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        let mainURL = "http://ncov.mohw.go.kr/bdBoardList_Real.do?brdId=1&brdGubun=13&ncvContSeq=&contSeq=&board_id=&gubun="
+        guard let main = URL(string: mainURL) else {
+          print("Error: \(mainURL) doesn't seem to be a valid URL")
+          return
+        }
+        do{
+          let coronaCityMain = try String(contentsOf: main, encoding: .utf8)
+          let doc = try HTML(html: coronaCityMain, encoding: .utf8)
+          for product in doc.xpath("//div[@class='data_table tbl_scrl_mini2 mgt24']"){
+            if let schedule = product.text{
+            print(schedule)
+            }
+        }
+          
+        }catch let error{
+          print("Error: \(error)")
+        }
     }
 }
 

@@ -1,16 +1,20 @@
 PODS:
+  - Kanna (5.0.0)
   - RxSwift (5.0.1)
 
 DEPENDENCIES:
+  - Kanna
   - RxSwift
 
 SPEC REPOS:
   trunk:
+    - Kanna
     - RxSwift
 
 SPEC CHECKSUMS:
+  Kanna: a32875df62975f8f4b871e933b4ea1a5c3b8be0f
   RxSwift: e2dc62b366a3adf6a0be44ba9f405efd4c94e0c4
 
-PODFILE CHECKSUM: bc875e5ace566c2d5305dc625919de82cb3d569b
+PODFILE CHECKSUM: da812979c367d27937e17561ea4012ced0a13245
 
 COCOAPODS: 1.9.0
