@@ -19,6 +19,7 @@ class StatusByRegionViewController: CustomViewController, UITableViewDelegate, U
         }
         cell.cityName?.text = Region.cities[indexPath.row]
         cell.numOfPatient?.text = NumOfPatient.patientNum[indexPath.row]
+        cell.numOfPatient?.textColor = UIColor.red
         return cell
     }
     override func viewDidLoad() {
