@@ -33,7 +33,7 @@ class StatusByRegionViewController: CustomViewController, UITableViewDelegate, U
           let coronaCityMain = try String(contentsOf: main, encoding: .utf8)
           let doc = try HTML(html: coronaCityMain, encoding: .utf8)
           for product in doc.xpath("//div[@class='data_table tbl_scrl_mini2 mgt24']"){
-            let productTable = product.at_xpath("table")?.at_xpath("tbody")?.text
+            let productTable = product.at_xpath("table")?.at_xpath("tbody")?.at_xpath("tr")?.at_xpath("td")?.nextSibling?.text
             print(productTable ?? "defaultErrorString")
         }
           
