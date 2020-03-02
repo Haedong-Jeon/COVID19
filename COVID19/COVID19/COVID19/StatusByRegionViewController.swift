@@ -17,7 +17,7 @@ class StatusByRegionViewController: CustomViewController, UITableViewDelegate, U
             return UITableViewCell()
         }
         cell.cityName?.text = Region.cities[indexPath.row]
-        cell.numOfPatient?.text = "오류";
+        cell.numOfPatient?.text = NumOfPatient.patientNum[indexPath.row]
         return cell
     }
     override func viewDidLoad() {

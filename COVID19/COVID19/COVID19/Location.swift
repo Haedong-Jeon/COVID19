@@ -17,15 +17,13 @@ class Location: NSObject, CLLocationManagerDelegate{
     override private init(){
         
     }
-    
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         guard let currentPosition = locations.last else{
             return
         }
         print("\(currentPosition)")
         positionString = "\(currentPosition)"
-    }
-    
+    }    
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
         print(error)
     }

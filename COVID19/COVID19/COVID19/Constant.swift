@@ -8,7 +8,7 @@
 
 import UIKit
 
-class Constant {
+struct Constant{
     //오류 메시지
     static let locationPermissionDeniedAlertTitle = "위치 서비스"
     static let locationPermissionDeniedAlertMsg = "위치 서비스 사용을 허가해주세요."
@@ -24,7 +24,7 @@ class Constant {
     static let checkNews = "관련 뉴스 체크하기"
 }
 
-class Alert{
+struct Alert{
     enum TYPE{
         static let locationPermissionDenied = 1111
         static let locationPermissionNotDetermined = 2222
@@ -33,6 +33,10 @@ class Alert{
     }
 }
 
-class Region{
+struct Region{
     static let cities:Array<String> = ["서울", "부산", "대구", "인천", "광주", "대전", "울산", "세종", "경기", "강원", "충북", "충남", "전북", "전남", "경북", "경남", "제주"]
+}
+
+struct NumOfPatient{
+    static let patientNum:Array<String> = ["","","","","","","","","","","","","","","","",""]
 }
