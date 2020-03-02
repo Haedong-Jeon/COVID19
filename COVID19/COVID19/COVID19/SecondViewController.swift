@@ -14,17 +14,6 @@ class SecondViewController: CustomViewController{
         super.viewDidLoad()
     }
     override func viewDidAppear(_ animated: Bool){
-        let locationServiceStatus = DeviceConfigure.instance.checkLocationService()
-        let netWorkServiceStatus = DeviceConfigure.instance.checkDeviceNetworkStatus()
-        
-        if locationServiceStatus == Alert.TYPE.locationPermissionDenied{
-            super.showAlertMsg(msgTitle: Constant.locationPermissionDeniedAlertTitle, msgBody: Constant.locationPermissionDeniedAlertMsg, btn: Constant.ok)
-        }
-        if netWorkServiceStatus == Alert.TYPE.networkConnectionError{
-            super.showAlertMsg(msgTitle: Constant.networkConnectionErrorTitle, msgBody: Constant.networkConnectionErrorMsg, btn: Constant.retry){
-                (ACTION) in self.viewDidAppear(true)
-            }
-        }
         
     }
     //메뉴 버튼 클릭시 이동

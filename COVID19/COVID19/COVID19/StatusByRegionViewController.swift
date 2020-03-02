@@ -17,12 +17,11 @@ class StatusByRegionViewController: CustomViewController, UITableViewDelegate, U
             return UITableViewCell()
         }
         cell.cityName?.text = Region.cities[indexPath.row]
-        cell.numOfPatient?.text = "\(444)";
+        cell.numOfPatient?.text = "오류";
         return cell
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
     }
 }
