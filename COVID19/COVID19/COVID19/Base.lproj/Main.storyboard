@@ -54,30 +54,36 @@
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RfX-KZ-omu">
                                 <rect key="frame" x="0.0" y="50" width="414" height="100"/>
-                                <color key="backgroundColor" red="0.91816671407148009" green="1" blue="0.99020028218943301" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
-                                <state key="normal" title="지역별 확진자 수"/>
+                                <state key="normal" title="지역별 확진자 수">
+                                    <color key="titleColor" red="0.98260669950000001" green="0.9397926137" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
                                 <connections>
                                     <action selector="goToStatusByRegionScene" destination="BIy-AC-dVF" eventType="touchUpInside" id="wX3-y8-xCq"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5YW-eY-p28">
                                 <rect key="frame" x="0.0" y="158" width="414" height="100"/>
-                                <color key="backgroundColor" red="0.86449501175432197" green="0.90531928382509097" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="nFJ-lS-Uqw"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
-                                <state key="normal" title="마스크 주문"/>
+                                <state key="normal" title="마스크 주문">
+                                    <color key="titleColor" red="0.98260669950000001" green="0.9397926137" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
                                 <connections>
                                     <action selector="goToOrderMasksScene" destination="BIy-AC-dVF" eventType="touchUpInside" id="7tw-lk-KbR"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1iE-wD-Qyh">
                                 <rect key="frame" x="0.0" y="266" width="414" height="100"/>
-                                <color key="backgroundColor" red="0.98260669949256585" green="0.9397926136512269" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
-                                <state key="normal" title="관련 뉴스"/>
+                                <state key="normal" title="관련 뉴스">
+                                    <color key="titleColor" red="0.98260669950000001" green="0.9397926137" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
                                 <connections>
                                     <action selector="goToRelatedNewsScene" destination="BIy-AC-dVF" eventType="touchUpInside" id="2JY-eg-aay"/>
                                 </connections>
@@ -259,15 +265,22 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="마스크 주문" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yc6-Gn-S9N">
-                                <rect key="frame" x="84" y="269" width="191" height="119"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Npg-kT-MON">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="RzR-4K-GSw" firstAttribute="bottom" secondItem="Npg-kT-MON" secondAttribute="bottom" id="fUs-Ed-Z3H"/>
+                            <constraint firstItem="Npg-kT-MON" firstAttribute="top" secondItem="RzR-4K-GSw" secondAttribute="top" id="l8J-4m-6l5"/>
+                            <constraint firstItem="Npg-kT-MON" firstAttribute="leading" secondItem="RzR-4K-GSw" secondAttribute="leading" id="mzn-Hu-C62"/>
+                            <constraint firstItem="RzR-4K-GSw" firstAttribute="trailing" secondItem="Npg-kT-MON" secondAttribute="trailing" id="o3I-gA-DYR"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="RzR-4K-GSw"/>
                     </view>
                     <navigationItem key="navigationItem" id="5yr-Er-856"/>
