@@ -9,10 +9,8 @@
 import UIKit
 
 class CustomViewController: UIViewController {
-
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
     }
     //오류 메시지
