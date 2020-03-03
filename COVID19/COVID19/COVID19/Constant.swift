@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Kanna
 
 struct Constant{
     //오류 메시지
@@ -25,6 +26,10 @@ struct Constant{
     static let checkNews = "관련 뉴스 체크하기"
     //쇼핑 url
     static let shoppingURL =  "https://www.google.com/search?hl=ko&tbm=shop&sxsrf=ALeKk03lPCfUvNAePtti0rnfiQ3Vmb0rig%3A1583194863849&ei=76JdXqaxM-izmAWA2qjIDg&q=KF80+%EB%A7%88%EC%8A%A4%ED%81%AC&oq=KF80+%EB%A7%88%EC%8A%A4%ED%81%AC&gs_l=psy-ab-sh.3..0l10.18503.19535.0.19873.5.5.0.0.0.0.155.281.0j2.2.0....0...1c.1.64.psy-ab-sh..3.2.280...0i7i30k1.0.seNrzPqTsBQ"
+    //지역별 현황 url
+    static let statusByRegionURL = "http://ncov.mohw.go.kr/bdBoardList_Real.do?brdId=1&brdGubun=13&ncvContSeq=&contSeq=&board_id=&gubun="
+    //지역별 현황 테이블
+    static let regionalTable = "//div[@class='data_table mgt24']/table/tbody/tr"
 }
 
 struct Alert{
@@ -37,9 +42,9 @@ struct Alert{
 }
 
 struct Region{
-    static let cities:Array<String> = ["서울", "부산", "대구", "인천", "광주", "대전", "울산", "세종", "경기", "강원", "충북", "충남", "전북", "전남", "경북", "경남", "제주"]
+    static var cities:Array<String> = []
 }
 
 struct NumOfPatient{
-    static var patientNum:Array<String> = ["","","","","","","","","","","","","","","","",""]
+    static var patientNum:Array<String> = []
 }

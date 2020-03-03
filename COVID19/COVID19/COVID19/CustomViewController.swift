@@ -48,4 +48,9 @@ class CustomViewController: UIViewController {
     func changeScreen(identifierString:String){
         performSegue(withIdentifier: identifierString, sender: nil)
     }
+    //안전한 배열 인덱스
+    func safeArrayIndex(targetIdx:Int, ArraySize:Int)->Int{
+        return targetIdx % ArraySize
+    }
 }
+
