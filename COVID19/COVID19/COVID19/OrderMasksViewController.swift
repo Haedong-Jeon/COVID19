@@ -25,7 +25,7 @@ class OrderMasksViewController:  CustomViewController, WKUIDelegate, WKNavigatio
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let myBlog = "https://search.shopping.naver.com/search/all.nhn?origQuery=%EB%A7%88%EC%8A%A4%ED%81%AC&spec=M10018852%7CM10811848%5EM10018852%7CM10811847%5EM10018852%7CM10811849&pagingIndex=1&pagingSize=40&viewType=list&sort=rel&frm=NVSHATT&query=%EB%A7%88%EC%8A%A4%ED%81%AC"
+        let myBlog = "https://www.google.com/search?hl=ko&tbm=shop&sxsrf=ALeKk03lPCfUvNAePtti0rnfiQ3Vmb0rig%3A1583194863849&ei=76JdXqaxM-izmAWA2qjIDg&q=KF80+%EB%A7%88%EC%8A%A4%ED%81%AC&oq=KF80+%EB%A7%88%EC%8A%A4%ED%81%AC&gs_l=psy-ab-sh.3..0l10.18503.19535.0.19873.5.5.0.0.0.0.155.281.0j2.2.0....0...1c.1.64.psy-ab-sh..3.2.280...0i7i30k1.0.seNrzPqTsBQ"
         let url = URL(string: myBlog)
         let request = URLRequest(url: url!)
         webView.load(request)
@@ -54,7 +54,7 @@ class OrderMasksViewController:  CustomViewController, WKUIDelegate, WKNavigatio
     }
     @available(iOS 8.0, *)
     public func webView(_ webView: WKWebView, didStartProvisionalNavigation navigation: WKNavigation!){
-//        activityIndicator = UIActivityIndicatorView(style: .UIActivityIndicatorView.Style.large)
+        activityIndicator = UIActivityIndicatorView(style: .large)
         activityIndicator.frame = CGRect(x: view.frame.midX-50, y: view.frame.midY-50, width: 100, height: 100)
         activityIndicator.color = UIColor.red
         activityIndicator.hidesWhenStopped = true
