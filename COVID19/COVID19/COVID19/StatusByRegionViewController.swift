@@ -50,7 +50,6 @@ class StatusByRegionViewController: CustomViewController, UITableViewDelegate, U
                 .subscribe(onNext:{num in NumOfPatient.patientNum.append("\(num ?? "-")")})
                 .dispose()
         }
-          
         }catch let error{
           print("Error: \(error)")
         }
@@ -62,7 +61,6 @@ class StatusByRegionViewController: CustomViewController, UITableViewDelegate, U
         return source.nextSibling?.at_xpath("th")?.text
     }
 }
-
 class regionCell: UITableViewCell{
     @IBOutlet weak var cityName:UILabel!
     @IBOutlet weak var numOfPatient:UILabel!

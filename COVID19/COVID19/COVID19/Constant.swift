@@ -30,6 +30,8 @@ struct Constant{
     static let statusByRegionURL = "http://ncov.mohw.go.kr/bdBoardList_Real.do?brdId=1&brdGubun=13&ncvContSeq=&contSeq=&board_id=&gubun="
     //지역별 현황 테이블
     static let regionalTable = "//div[@class='data_table mgt24']/table/tbody/tr"
+    //뉴스 테이블
+    static let newsHeadlineTable = "//a[@class=' _sp_each_title']"
 }
 
 struct Alert{
@@ -47,4 +49,8 @@ struct Region{
 
 struct NumOfPatient{
     static var patientNum:Array<String> = []
+}
+
+struct News{
+    static var headline:Array<String> = []
 }
