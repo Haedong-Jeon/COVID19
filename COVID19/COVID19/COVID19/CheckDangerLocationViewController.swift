@@ -7,13 +7,14 @@
 //
 
 import UIKit
+import CoreLocation
 
 class CheckDangerLocationViewController: CustomViewController {
-
+    @IBOutlet weak var location:UILabel?
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
+        location?.text = Location.location.positionString
     }
     
 }
