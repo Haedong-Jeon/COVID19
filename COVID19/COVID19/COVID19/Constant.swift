@@ -30,6 +30,7 @@ struct Constant{
     static let statusByRegionURL = "http://ncov.mohw.go.kr/bdBoardList_Real.do?brdId=1&brdGubun=13&ncvContSeq=&contSeq=&board_id=&gubun="
     //코로나 뉴스 url
     static let coronaNewsURL = "https://search.naver.com/search.naver?query=%EC%BD%94%EB%A1%9C%EB%82%98&where=news&ie=utf8&sm=nws_hty"
+    static let mainStatusTable = "//div[@class='data_table mgt16']/table//tbody/tr/td"
     //지역별 현황 테이블
     static let regionalTable = "//div[@class='data_table mgt24']/table/tbody/tr"
     //뉴스 테이블
@@ -58,4 +59,8 @@ struct NumOfPatient{
 struct News{
     static var headline:Array<String> = []
     static var detailUrl:Array<String> = []
+}
+
+struct mainStatus{
+    static var mainStatus:Array<String> = []
 }

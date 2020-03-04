@@ -6,6 +6,7 @@ target 'COVID19' do
   use_frameworks!
 	pod 'RxSwift'
 	pod 'Kanna'
+	pod 'Charts'
   # Pods for COVID19
 
 end

@@ -52,22 +52,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RfX-KZ-omu">
-                                <rect key="frame" x="0.0" y="50" width="414" height="100"/>
-                                <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
-                                <state key="normal" title="지역별 확진자 수">
-                                    <color key="titleColor" red="0.98260669950000001" green="0.9397926137" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                </state>
-                                <connections>
-                                    <action selector="goToStatusByRegionScene" destination="BIy-AC-dVF" eventType="touchUpInside" id="wX3-y8-xCq"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5YW-eY-p28">
-                                <rect key="frame" x="0.0" y="158" width="414" height="100"/>
-                                <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <button opaque="NO" contentMode="redraw" horizontalHuggingPriority="100" verticalHuggingPriority="100" verticalCompressionResistancePriority="100" placeholderIntrinsicWidth="414" placeholderIntrinsicHeight="infinite" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="5YW-eY-p28">
+                                <rect key="frame" x="-2" y="395" width="414" height="53"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="100" id="nFJ-lS-Uqw"/>
+                                    <constraint firstAttribute="height" constant="50" id="nFJ-lS-Uqw"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
                                 <state key="normal" title="마스크 주문">
@@ -77,9 +67,10 @@
                                     <action selector="goToOrderMasksScene" destination="BIy-AC-dVF" eventType="touchUpInside" id="7tw-lk-KbR"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1iE-wD-Qyh">
-                                <rect key="frame" x="0.0" y="266" width="414" height="100"/>
-                                <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <button opaque="NO" contentMode="redraw" horizontalHuggingPriority="100" verticalHuggingPriority="100" verticalCompressionResistancePriority="100" placeholderIntrinsicWidth="414" placeholderIntrinsicHeight="infinite" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="1iE-wD-Qyh">
+                                <rect key="frame" x="-2" y="488" width="414.00000000000011" height="52.999999999999957"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
                                 <state key="normal" title="관련 뉴스">
                                     <color key="titleColor" red="0.98260669950000001" green="0.9397926137" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -88,8 +79,9 @@
                                     <action selector="goToRelatedNewsScene" destination="BIy-AC-dVF" eventType="touchUpInside" id="2JY-eg-aay"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rxY-FB-tT2">
-                                <rect key="frame" x="0.0" y="374" width="414" height="100"/>
+                            <button opaque="NO" contentMode="redraw" horizontalHuggingPriority="100" verticalHuggingPriority="100" verticalCompressionResistancePriority="100" ambiguous="YES" placeholderIntrinsicWidth="414" placeholderIntrinsicHeight="53" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="rxY-FB-tT2" customClass="UIButoon">
+                                <rect key="frame" x="0.0" y="566" width="414.00000000000011" height="52.999999999999922"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="0.38097415825598224" blue="0.35447690008916877" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="4z5-D3-k83"/>
@@ -101,30 +93,35 @@
                                     <action selector="goTocheckDangerLocationScene" destination="BIy-AC-dVF" eventType="touchUpInside" id="u1h-Kg-fhS"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" id="gLh-fj-k9x" customClass="PieChartView" customModule="Charts">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="272"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </view>
+                            <button opaque="NO" contentMode="redraw" horizontalHuggingPriority="100" verticalHuggingPriority="100" verticalCompressionResistancePriority="100" placeholderIntrinsicWidth="414" placeholderIntrinsicHeight="infinite" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="RfX-KZ-omu">
+                                <rect key="frame" x="-2" y="310" width="414.00000000000011" height="52.999999999999972"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
+                                <state key="normal" title="지역별 확진자 수">
+                                    <color key="titleColor" red="0.98260669950000001" green="0.9397926137" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                                <connections>
+                                    <action selector="goToStatusByRegionScene" destination="BIy-AC-dVF" eventType="touchUpInside" id="wX3-y8-xCq"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="HAH-dQ-jqI" firstAttribute="trailing" secondItem="RfX-KZ-omu" secondAttribute="trailing" id="0pd-0V-wGC"/>
-                            <constraint firstItem="rxY-FB-tT2" firstAttribute="leading" secondItem="1iE-wD-Qyh" secondAttribute="leading" id="5sH-tv-Agy"/>
-                            <constraint firstItem="RfX-KZ-omu" firstAttribute="leading" secondItem="HAH-dQ-jqI" secondAttribute="leading" id="9hZ-cj-zV5"/>
-                            <constraint firstItem="HAH-dQ-jqI" firstAttribute="bottom" secondItem="RfX-KZ-omu" secondAttribute="bottom" constant="572" id="CAY-p6-IEs"/>
-                            <constraint firstItem="1iE-wD-Qyh" firstAttribute="top" secondItem="5YW-eY-p28" secondAttribute="bottom" constant="8" id="CKs-gM-dV9"/>
-                            <constraint firstItem="5YW-eY-p28" firstAttribute="height" secondItem="1iE-wD-Qyh" secondAttribute="height" id="Ewk-Qk-2fo"/>
-                            <constraint firstItem="rxY-FB-tT2" firstAttribute="top" secondItem="1iE-wD-Qyh" secondAttribute="bottom" constant="8" id="GkL-SG-fd4"/>
-                            <constraint firstItem="RfX-KZ-omu" firstAttribute="top" secondItem="HAH-dQ-jqI" secondAttribute="top" constant="50" id="KR6-X2-5wp"/>
-                            <constraint firstItem="rxY-FB-tT2" firstAttribute="leading" secondItem="RfX-KZ-omu" secondAttribute="leading" id="Qwm-qN-PhR"/>
-                            <constraint firstItem="rxY-FB-tT2" firstAttribute="trailing" secondItem="RfX-KZ-omu" secondAttribute="trailing" id="ffy-2E-COI"/>
-                            <constraint firstItem="1iE-wD-Qyh" firstAttribute="height" secondItem="rxY-FB-tT2" secondAttribute="height" id="i5f-KK-hcN"/>
-                            <constraint firstItem="rxY-FB-tT2" firstAttribute="trailing" secondItem="5YW-eY-p28" secondAttribute="trailing" id="lFB-Mf-UqQ"/>
-                            <constraint firstItem="rxY-FB-tT2" firstAttribute="trailing" secondItem="1iE-wD-Qyh" secondAttribute="trailing" id="rvC-EZ-7RS"/>
-                            <constraint firstItem="rxY-FB-tT2" firstAttribute="leading" secondItem="5YW-eY-p28" secondAttribute="leading" id="rzn-yr-Ic9"/>
-                            <constraint firstItem="5YW-eY-p28" firstAttribute="top" secondItem="RfX-KZ-omu" secondAttribute="bottom" constant="8" id="uaI-wb-HFw"/>
-                            <constraint firstItem="RfX-KZ-omu" firstAttribute="height" secondItem="5YW-eY-p28" secondAttribute="height" id="xiK-WV-Tj2"/>
+                            <constraint firstItem="HAH-dQ-jqI" firstAttribute="trailing" secondItem="gLh-fj-k9x" secondAttribute="trailing" id="FoH-pa-FOx"/>
+                            <constraint firstItem="gLh-fj-k9x" firstAttribute="top" secondItem="HAH-dQ-jqI" secondAttribute="top" id="NR5-hg-Al9"/>
+                            <constraint firstItem="gLh-fj-k9x" firstAttribute="leading" secondItem="HAH-dQ-jqI" secondAttribute="leading" id="qNE-lJ-8n3"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="HAH-dQ-jqI"/>
                     </view>
                     <navigationItem key="navigationItem" id="D1H-8x-T1t"/>
                     <connections>
+                        <outlet property="chart" destination="gLh-fj-k9x" id="aaz-5o-3nC"/>
                         <segue destination="Xil-ay-Cn0" kind="show" identifier="goToStatusByRegion" id="ZUE-RR-hdp"/>
                         <segue destination="jAN-Ml-55O" kind="show" identifier="goToOrderMasks" id="0dd-Si-6Hr"/>
                         <segue destination="TCB-2G-lkj" kind="show" identifier="goToRelatedNews" id="4ar-k7-tiy"/>
@@ -133,7 +130,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SYV-Kt-n9c" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="138" y="43"/>
+            <point key="canvasLocation" x="137.68115942028987" y="42.857142857142854"/>
         </scene>
         <!--Status By Region View Controller-->
         <scene sceneID="yDG-HX-dV3">

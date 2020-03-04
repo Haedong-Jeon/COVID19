@@ -1,20 +1,26 @@
 PODS:
+  - Charts (3.4.0):
+    - Charts/Core (= 3.4.0)
+  - Charts/Core (3.4.0)
   - Kanna (5.0.0)
   - RxSwift (5.0.1)
 
 DEPENDENCIES:
+  - Charts
   - Kanna
   - RxSwift
 
 SPEC REPOS:
   trunk:
+    - Charts
     - Kanna
     - RxSwift
 
 SPEC CHECKSUMS:
+  Charts: 74c9f256eaf0460c0c416522d1cf8c634ea6b286
   Kanna: a32875df62975f8f4b871e933b4ea1a5c3b8be0f
   RxSwift: e2dc62b366a3adf6a0be44ba9f405efd4c94e0c4
 
-PODFILE CHECKSUM: da812979c367d27937e17561ea4012ced0a13245
+PODFILE CHECKSUM: 5aad880d76f360a08a8f0bc1b8369dc038a456b5
 
 COCOAPODS: 1.9.0
