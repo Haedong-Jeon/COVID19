@@ -55,7 +55,7 @@
                             <button opaque="NO" contentMode="redraw" horizontalHuggingPriority="100" verticalHuggingPriority="100" verticalCompressionResistancePriority="100" placeholderIntrinsicWidth="414" placeholderIntrinsicHeight="infinite" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="5YW-eY-p28">
                                 <rect key="frame" x="-2" y="395" width="414" height="53"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.49692767859999998" green="0.60783338549999999" blue="0.82355493310000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="nFJ-lS-Uqw"/>
                                 </constraints>
@@ -70,7 +70,7 @@
                             <button opaque="NO" contentMode="redraw" horizontalHuggingPriority="100" verticalHuggingPriority="100" verticalCompressionResistancePriority="100" placeholderIntrinsicWidth="414" placeholderIntrinsicHeight="infinite" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="1iE-wD-Qyh">
                                 <rect key="frame" x="-2" y="488" width="414.00000000000011" height="52.999999999999957"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.49692767859999998" green="0.60783338549999999" blue="0.82355493310000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
                                 <state key="normal" title="관련 뉴스">
                                     <color key="titleColor" red="0.98260669950000001" green="0.9397926137" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -82,7 +82,7 @@
                             <button opaque="NO" contentMode="redraw" horizontalHuggingPriority="100" verticalHuggingPriority="100" verticalCompressionResistancePriority="100" ambiguous="YES" placeholderIntrinsicWidth="414" placeholderIntrinsicHeight="53" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="rxY-FB-tT2" customClass="UIButoon">
                                 <rect key="frame" x="0.0" y="566" width="414.00000000000011" height="52.999999999999922"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="1" green="0.38097415825598224" blue="0.35447690008916877" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="backgroundColor" red="1" green="0.47143891628191059" blue="0.51545430938152326" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="4z5-D3-k83"/>
                                 </constraints>
@@ -101,7 +101,7 @@
                             <button opaque="NO" contentMode="redraw" horizontalHuggingPriority="100" verticalHuggingPriority="100" verticalCompressionResistancePriority="100" placeholderIntrinsicWidth="414" placeholderIntrinsicHeight="infinite" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="RfX-KZ-omu">
                                 <rect key="frame" x="-2" y="310" width="414.00000000000011" height="52.999999999999972"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.51831302651868949" green="0.60927838695992143" blue="0.80591067718100673" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
                                 <state key="normal" title="지역별 확진자 수">
                                     <color key="titleColor" red="0.98260669950000001" green="0.9397926137" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
