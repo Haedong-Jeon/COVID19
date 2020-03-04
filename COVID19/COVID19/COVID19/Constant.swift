@@ -28,10 +28,14 @@ struct Constant{
     static let shoppingURL =  "https://www.google.com/search?hl=ko&tbm=shop&sxsrf=ALeKk03lPCfUvNAePtti0rnfiQ3Vmb0rig%3A1583194863849&ei=76JdXqaxM-izmAWA2qjIDg&q=KF80+%EB%A7%88%EC%8A%A4%ED%81%AC&oq=KF80+%EB%A7%88%EC%8A%A4%ED%81%AC&gs_l=psy-ab-sh.3..0l10.18503.19535.0.19873.5.5.0.0.0.0.155.281.0j2.2.0....0...1c.1.64.psy-ab-sh..3.2.280...0i7i30k1.0.seNrzPqTsBQ"
     //지역별 현황 url
     static let statusByRegionURL = "http://ncov.mohw.go.kr/bdBoardList_Real.do?brdId=1&brdGubun=13&ncvContSeq=&contSeq=&board_id=&gubun="
+    //코로나 뉴스 url
+    static let coronaNewsURL = "https://search.naver.com/search.naver?query=%EC%BD%94%EB%A1%9C%EB%82%98&where=news&ie=utf8&sm=nws_hty"
     //지역별 현황 테이블
     static let regionalTable = "//div[@class='data_table mgt24']/table/tbody/tr"
     //뉴스 테이블
     static let newsHeadlineTable = "//a[@class=' _sp_each_title']"
+    //뉴스 상세 이동
+    static let newsDetail = "//a[@class=' _sp_each_title']"
 }
 
 struct Alert{
@@ -53,4 +57,5 @@ struct NumOfPatient{
 
 struct News{
     static var headline:Array<String> = []
+    static var detailUrl:Array<String> = []
 }

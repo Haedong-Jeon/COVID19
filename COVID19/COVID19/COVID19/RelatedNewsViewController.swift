@@ -24,12 +24,23 @@ class RelatedNewsViewController: CustomViewController, UITableViewDelegate, UITa
         cell.headline?.text = News.headline[newsIdx]
         return cell
     }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showNewsDetail"{
+            let vc = segue.destination as? NewsDetailViewController
+            if let index = sender as? Int{
+                vc?.newsURL = News.detailUrl[index]
+            }
+        }
+    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "showNewsDetail", sender: indexPath.row)
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         News.headline.removeAll()
-        let mainURL = "https://search.naver.com/search.naver?query=%EC%BD%94%EB%A1%9C%EB%82%98&where=news&ie=utf8&sm=nws_hty"
-        guard let main = URL(string: mainURL) else {
-          print("Error: \(mainURL) doesn't seem to be a valid URL")
+        let newsURL = Constant.coronaNewsURL
+        guard let main = URL(string: newsURL) else {
+          print("Error: \(newsURL) doesn't seem to be a valid URL")
           return
         }
         do{
@@ -37,12 +48,16 @@ class RelatedNewsViewController: CustomViewController, UITableViewDelegate, UITa
           let doc = try HTML(html: newsHeadline, encoding: .utf8)
             for htmlSource in doc.xpath(Constant.newsHeadlineTable){
                 let newsHead = Observable<String?>.just(htmlSource.text)
-                
+                let detailURL = Observable<String?>.just(htmlSource["href"])
                 newsHead
                     .filter{newsHeadline in newsHeadline != nil}
                     .subscribe(onNext:{newsHeadline in News.headline.append(newsHeadline!)})
                     .dispose()
-        }
+                detailURL
+                    .filter{url in url != nil}
+                    .subscribe(onNext:{url in News.detailUrl.append(url!)})
+                    .dispose()
+            }
         }catch let error{
           print("Error: \(error)")
         }

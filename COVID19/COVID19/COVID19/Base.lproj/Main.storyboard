@@ -286,10 +286,45 @@
                         <viewLayoutGuide key="safeArea" id="Hgs-5d-AwN"/>
                     </view>
                     <navigationItem key="navigationItem" id="NfL-Ce-yYE"/>
+                    <connections>
+                        <segue destination="PdR-S1-Wdt" kind="show" identifier="showNewsDetail" id="Yca-q4-cHM"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hkH-ku-fC9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="263.768115942029" y="1046.6517857142858"/>
+        </scene>
+        <!--News Detail View Controller-->
+        <scene sceneID="RSS-fi-1I1">
+            <objects>
+                <viewController id="PdR-S1-Wdt" customClass="NewsDetailViewController" customModule="COVID19" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="HF1-kS-Ly9">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cn2-yS-uAR">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="cn2-yS-uAR" firstAttribute="top" secondItem="Z7U-mK-dlE" secondAttribute="top" id="E80-rF-tqz"/>
+                            <constraint firstItem="cn2-yS-uAR" firstAttribute="leading" secondItem="Z7U-mK-dlE" secondAttribute="leading" id="GBG-7B-EXx"/>
+                            <constraint firstItem="Z7U-mK-dlE" firstAttribute="bottom" secondItem="cn2-yS-uAR" secondAttribute="bottom" id="cKE-AN-qLZ"/>
+                            <constraint firstItem="Z7U-mK-dlE" firstAttribute="trailing" secondItem="cn2-yS-uAR" secondAttribute="trailing" id="gjj-tA-ZaP"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Z7U-mK-dlE"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="LUB-4t-CP7"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TYB-nH-I9s" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="264" y="1813"/>
         </scene>
         <!--Order Masks View Controller-->
         <scene sceneID="flX-tJ-Gs5">

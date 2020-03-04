@@ -24,6 +24,7 @@
 		E9CBF805240888B80010FC0A /* FirstSceneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9CBF804240888B80010FC0A /* FirstSceneViewController.swift */; };
 		E9CBF807240889640010FC0A /* DeviceConfigure.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9CBF806240889640010FC0A /* DeviceConfigure.swift */; };
 		E9DE772F24090AE000ED0222 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9DE772E24090AE000ED0222 /* Location.swift */; };
+		E9EA4145240F23AC0081F763 /* NewsDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9EA4144240F23AB0081F763 /* NewsDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +48,7 @@
 		E9CBF804240888B80010FC0A /* FirstSceneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstSceneViewController.swift; sourceTree = SOURCE_ROOT; };
 		E9CBF806240889640010FC0A /* DeviceConfigure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceConfigure.swift; sourceTree = "<group>"; };
 		E9DE772E24090AE000ED0222 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		E9EA4144240F23AB0081F763 /* NewsDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsDetailViewController.swift; sourceTree = "<group>"; };
 		EA10E7A3115B404B8F6C796C /* Pods-COVID19.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-COVID19.debug.xcconfig"; path = "Target Support Files/Pods-COVID19/Pods-COVID19.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -100,6 +102,7 @@
 				E9CBF7EB2407B6340010FC0A /* SceneDelegate.swift */,
 				E9CBF7EF2407B6340010FC0A /* Main.storyboard */,
 				E9ADEF3B240B354B003FBAC8 /* OrderMasksViewController.swift */,
+				E9EA4144240F23AB0081F763 /* NewsDetailViewController.swift */,
 				E9ADEF3D240B358B003FBAC8 /* RelatedNewsViewController.swift */,
 				E9ADEF3F240B35A6003FBAC8 /* CheckDangerLocationViewController.swift */,
 				E9CBF806240889640010FC0A /* DeviceConfigure.swift */,
@@ -246,6 +249,7 @@
 				E9A145542409123300B05D99 /* SecondViewController.swift in Sources */,
 				E9ADEF3A240B3536003FBAC8 /* StatusByRegionViewController.swift in Sources */,
 				E9DE772F24090AE000ED0222 /* Location.swift in Sources */,
+				E9EA4145240F23AC0081F763 /* NewsDetailViewController.swift in Sources */,
 				E9ADEF3C240B354B003FBAC8 /* OrderMasksViewController.swift in Sources */,
 				E9ADEF40240B35A6003FBAC8 /* CheckDangerLocationViewController.swift in Sources */,
 				E9CBF807240889640010FC0A /* DeviceConfigure.swift in Sources */,
