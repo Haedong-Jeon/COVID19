@@ -212,25 +212,22 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="위험 지역 확인" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KJM-c5-5uV">
-                                <rect key="frame" x="86" y="282" width="142" height="97"/>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="PGK-9q-90l">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="316"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            </mapView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="8i8-6z-nlq"/>
                     </view>
                     <navigationItem key="navigationItem" id="zWz-Lq-Whh"/>
                     <connections>
-                        <outlet property="location" destination="KJM-c5-5uV" id="mzV-mU-eQ3"/>
+                        <outlet property="mapView" destination="PGK-9q-90l" id="5lW-L8-Gy9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wuq-rz-zIh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="970" y="1047"/>
+            <point key="canvasLocation" x="969.56521739130437" y="1046.6517857142858"/>
         </scene>
         <!--Related News View Controller-->
         <scene sceneID="8gX-gJ-p1w">

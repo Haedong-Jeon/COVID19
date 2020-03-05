@@ -13,7 +13,7 @@ class Location: NSObject, CLLocationManagerDelegate{
     static let location = Location()
     let locationManager = CLLocationManager()
     var positionString:String?
-    
+    var CLLocation:CLLocation?
     override private init(){
         
     }
@@ -21,7 +21,7 @@ class Location: NSObject, CLLocationManagerDelegate{
         guard let currentPosition = locations.last else{
             return
         }
-        print("\(currentPosition)")
+        CLLocation = currentPosition
         positionString = "\(currentPosition)"
     }    
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
