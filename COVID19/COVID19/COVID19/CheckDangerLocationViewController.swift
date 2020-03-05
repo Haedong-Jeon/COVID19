@@ -12,6 +12,7 @@ import MapKit
 import RxSwift
 
 class CheckDangerLocationViewController: CustomViewController,MKMapViewDelegate {
+    var mTimer:Timer?
     let patientVist = Observable<(Double,Double)>.from(Constant.patientVisit)
     @IBOutlet weak var mapView:MKMapView?
     @IBOutlet weak var dangerLabel:UILabel?
@@ -20,9 +21,8 @@ class CheckDangerLocationViewController: CustomViewController,MKMapViewDelegate 
         
         Location.location.locationManager.desiredAccuracy = kCLLocationAccuracyBest
         mapView?.showsUserLocation = true
-        mapView?.userTrackingMode = .follow
-        myLocation(latitude: Location.location.CLLocation?.coordinate.latitude ?? 0, longitude: Location.location.CLLocation?.coordinate.longitude ?? 0, delta: 0.01)
-        check()
+        mapView?.userTrackingMode = .followWithHeading
+        checkPerSeconds()
         // Do any additional setup after loading the view.
     }
     override func didReceiveMemoryWarning() {
@@ -35,10 +35,17 @@ class CheckDangerLocationViewController: CustomViewController,MKMapViewDelegate 
         print("\(latitude) , \(longitude)")
         mapView?.setRegion(locationRegion, animated: true)
     }
-    func check(){
+    @objc func check(){
+        dangerLabel?.text = "반경 1km내에 위험지역이 없습니다."
+        dangerLabel?.backgroundColor = UIColor.blue
         patientVist
             .filter{pos in (Location.location.CLLocation?.distance(from: CLLocation(latitude: pos.0, longitude: pos.1)) ?? 9999)<Double(1000)}
             .subscribe(onNext:{_ in self.dangerLabel?.text = "반경 1km내에 위험지역이 있습니다."; self.dangerLabel?.backgroundColor = UIColor.red})
             .dispose()
+        
+        myLocation(latitude: Location.location.CLLocation?.coordinate.latitude ?? 0, longitude: Location.location.CLLocation?.coordinate.longitude ?? 0, delta: 0.01)
+    }
+    func checkPerSeconds(){
+        mTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(check), userInfo: nil, repeats: true)
     }
 }
