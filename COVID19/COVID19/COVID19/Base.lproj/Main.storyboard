@@ -233,6 +233,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="zWz-Lq-Whh"/>
                     <connections>
+                        <outlet property="dangerLabel" destination="Z8h-xd-ZtZ" id="ocJ-ae-OE7"/>
                         <outlet property="mapView" destination="PGK-9q-90l" id="5lW-L8-Gy9"/>
                     </connections>
                 </viewController>

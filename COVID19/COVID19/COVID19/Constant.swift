@@ -38,7 +38,7 @@ struct Constant{
     //뉴스 상세 이동
     static let newsDetail = "//a[@class=' _sp_each_title']"
     //확진자 방문지
-    static let patientVisit:Array<(Double,Double)> = [
+    static let patientVisit:Array<(latitude: Double,longitude: Double)> = [
         (37.4588418197, 126.4393467197),
         (37.5586545, 126.7944739),
         (37.524355,  127.0279482),
@@ -704,7 +704,7 @@ struct Constant{
         (35.53471829841707, 129.32251349107017),
         (35.255526304026304, 129.09106948875083),
         (35.19609559971223, 129.10573080376494),
-        (37.562776696352856, 127.06587787065742)        
+        (37.562776696352856, 127.06587787065742)
     ]
 }
 
