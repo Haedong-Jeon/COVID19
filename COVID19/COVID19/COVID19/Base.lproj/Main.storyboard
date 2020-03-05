@@ -213,11 +213,22 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="PGK-9q-90l">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="316"/>
+                                <rect key="frame" x="0.0" y="80" width="414" height="434"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </mapView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="반경 1Km내에 위험지역이 없습니다" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z8h-xd-ZtZ">
+                                <rect key="frame" x="0.0" y="553" width="414" height="69"/>
+                                <color key="backgroundColor" red="0.49692767859999998" green="0.60783338549999999" blue="0.82355493310000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="Z8h-xd-ZtZ" firstAttribute="leading" secondItem="8i8-6z-nlq" secondAttribute="leading" id="NS2-b8-zxl"/>
+                            <constraint firstItem="8i8-6z-nlq" firstAttribute="trailing" secondItem="Z8h-xd-ZtZ" secondAttribute="trailing" id="q3L-gb-Sbi"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="8i8-6z-nlq"/>
                     </view>
                     <navigationItem key="navigationItem" id="zWz-Lq-Whh"/>
