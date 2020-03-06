@@ -44,6 +44,14 @@ class CheckDangerLocationViewController: CustomViewController,MKMapViewDelegate 
             .dispose()
         
         myLocation(latitude: Location.location.CLLocation?.coordinate.latitude ?? 0, longitude: Location.location.CLLocation?.coordinate.longitude ?? 0, delta: 0.01)
+        patientVist
+            .subscribe(onNext:{pos in
+                let annotation: MKPointAnnotation = MKPointAnnotation()
+                annotation.coordinate = CLLocationCoordinate2DMake(pos.0, pos.1)
+                annotation.title = "확진자 방문지"
+                self.mapView?.addAnnotation(annotation)
+            })
+            .dispose()
     }
     func checkPerSeconds(){
         mTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(check), userInfo: nil, repeats: true)
