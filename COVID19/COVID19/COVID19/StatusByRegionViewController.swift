@@ -31,7 +31,7 @@ class StatusByRegionViewController: CustomViewController, UITableViewDelegate, U
         NumOfPatient.patientNum.removeAll()
         let mainURL = Constant.statusByRegionURL
         guard let main = URL(string: mainURL) else {
-          print("Error: \(mainURL) doesn't seem to be a valid")
+          print("Error: \(mainURL) doesn't seem to be a valid URL")
           return
         }
         do{
