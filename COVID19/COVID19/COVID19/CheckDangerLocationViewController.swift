@@ -32,16 +32,8 @@ class CheckDangerLocationViewController: CustomViewController,MKMapViewDelegate 
         let coordinateLocation = CLLocationCoordinate2DMake(latitude, longitude)
         let spanValue = MKCoordinateSpan(latitudeDelta: delta,longitudeDelta: delta)
         let locationRegion = MKCoordinateRegion(center: coordinateLocation, span: spanValue)
+        print("\(latitude) , \(longitude)")
         mapView?.setRegion(locationRegion, animated: true)
-        
-        patientVist
-            .subscribe(onNext:{pos in
-                let annotation: MKPointAnnotation = MKPointAnnotation()
-                annotation.coordinate = CLLocationCoordinate2DMake(pos.0, pos.1)
-                annotation.title = "확진자 방문지"
-                self.mapView?.addAnnotation(annotation)
-            })
-            .dispose()
     }
     @objc func check(){
         dangerLabel?.text = "반경 1km내에 위험지역이 없습니다."
